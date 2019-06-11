@@ -1,0 +1,135 @@
+body {
+    background-color: #000;
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", Arial;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+a {
+    border: none;
+    text-decoration: none;
+}
+
+
+/* Animated background */
+
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+
+/* CONTENU PRINCIPAL */
+
+#passage {
+    margin-top: 25vh;
+    max-width: 100%;
+}
+
+
+/* Texte du passage */
+
+#passage p {
+    padding: 0 10%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* INPUTS */
+
+input,
+select,
+select option {
+    font-size: 25px;
+    color: #fff;
+    outline: none;
+    font-family: Helvetica, Arial;
+}
+
+
+/* Zones de saisie de variables */
+
+input[type="text"] {
+    border: none;
+    border-bottom: 5px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    background-color: #000;
+}
+
+input[type="text"]:focus {
+    border-color: #fff;
+}
+
+
+/* Listbox */
+
+select {
+    border: 1px solid #fff;
+    padding: 10px;
+    background-color: #000;
+}
+
+
+/* Zone des choix */
+
+.choice-selector {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 40px 0;
+    margin-top: 20px;
+    background-color: #000;
+    border-top: 5px #fff solid;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Choix */
+
+.choice-selector a {
+    flex: 1;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    height: 100px;
+    transition: 0.7s ease color;
+}
+
+.choice-selector a:after {
+    content: "";
+    width: 100px;
+    border: 3px solid transparent;
+    display: inherit;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.choice-selector a:hover:after {
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #fff, rgba(0, 0, 0, 0)) 0 0 100% 0;
+}
+
+.choice-selector a:hover {
+    color: #fff;
+}
