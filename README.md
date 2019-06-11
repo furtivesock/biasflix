@@ -3,9 +3,11 @@ A Netflix of cognitive biases. Project for the module Communication in DUT Info.
 
 ## Notice (à lire !!)
 
+Si vous avez un fond noir lorsque vous testez depuis Twine, c'est normal. Il faut sauvegarder votre fichier ici, dans le dossier `watch/` pour afficher les images. Je vais voir s'il y a une solution pour qu'elles s'affichent sur Twine.
+
 ### Fichier Twine
 
-Il se trouve dans `watch\barnima.html`. Importez-le pour le modifier. 
+Il se trouve dans `watch/barnima.html`. Importez-le pour le modifier. 
 
 ### Syntaxe
 
