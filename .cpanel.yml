@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lyxxfr/4G-mimi.lyxx.fr/
+    - /bin/cp -R . $DEPLOYPATH
