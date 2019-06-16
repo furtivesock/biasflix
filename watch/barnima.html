@@ -303,21 +303,41 @@ Notez à quel point cette interprétation vous correspond.
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Incroyable|Trap]][[Plutôt précis|Trap]][[Bof|Not a trap]][[Pas top|Not a trap]][[Nul|Not a trap]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Je n&#39;ai pas envie que vous récoltiez mes données personnelles" tags="" position="1021,380" size="100,100">Cet épisode n&#39;a pas pour but de récupérer vos données personnelles si précieuses à vos yeux, mais d&#39;établir votre personnalité en fonction de vos réponses pour vous offrir la meilleure expérience possible. 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Je n&#39;ai pas envie que vous récoltiez mes données personnelles" tags="" position="1046,409" size="100,100">Cet épisode n&#39;a pas pour but de récupérer vos données personnelles si précieuses à vos yeux, mais d&#39;établir votre personnalité en fonction de vos réponses pour vous offrir la meilleure expérience possible. 
 Faites-moi confiance !
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Je vous fais confiance|C&#39;est parti]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Trap" tags="" position="726,1336" size="100,100">Cette interprétation vous satisfait ? Sachez que vous êtes tombé dans le panneau !
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Trap" tags="" position="726,1336" size="100,100">&lt;p id=&quot;first&quot;&gt;
+Cette interprétation vous satisfait ? Sachez que vous êtes tombé dans le panneau !
 Tel était le but de notre expérience depuis le début.
 Les réponses que vous avez donné n&#39;auront aucune influence sur le déroulement de cette série. Cette interprétation est la même pour tous les spectateurs. 
-Ils servaient juste à introduire...
-l&#39;effet BARNUM !
+Ils servaient juste à introduire...&lt;/p&gt;
+&lt;div id=&quot;second&quot;&gt;
+&lt;p&gt;l&#39;effet BARNUM !&lt;/p&gt;
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Comment ? Me faire avoir ? Moi ? Impossible !]]
 [[Je ne vous crois pas ! Laissez-moi faire à nouveau ce test !|C&#39;est parti]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Not a trap" tags="" position="935,1430" size="100,100">&lt;p id=&quot;first&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+window.bgVideo = null;
+$(&quot;#second&quot;).children().hide();
+setTimeout(
+  function() 
+  {
+	window.bgVideo = &quot;opening.mp4&quot;;
+	document.body.innerHTML = &#39;&lt;video id=&quot;bgvid&quot; playsinline autoplay&gt;&lt;source src=&quot;../img/background/&#39; + window.bgVideo + &#39;&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;&#39; + document.body.innerHTML;
+	var video = document.body.querySelector(&#39;video&#39;);
+	video.volume = 0.1;
+	$(&quot;#first&quot;).delay(1000).fadeOut();
+	$(&quot;#bgvid&quot;).on(&quot;ended&quot;, function() {
+		document.body.removeChild(video);
+   		$(&quot;#second&quot;).children().fadeIn();
+	});
+  }, 12000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Not a trap" tags="" position="935,1430" size="100,100">&lt;p id=&quot;first&quot;&gt;
 Toutes nos félicitations !
 Si vous êtes là, il y a des chances que cette interprétation ne vous corresponde pas totalement ou que vous ayez vu notre petit jeu...
 En effet, ce test de personnalité est bidon !
@@ -346,8 +366,8 @@ setTimeout(
 		document.body.removeChild(video);
    		$(&quot;#second&quot;).children().fadeIn();
 	});
-  }, 1000);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="14" name="Comment ? Me faire avoir ? Moi ? Impossible !" tags="" position="727,1488" size="100,100">On ne vous en veut pas pour votre naïveté. L&#39;erreur est humaine, n&#39;est-ce pas ?
+  }, 12000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="14" name="Comment ? Me faire avoir ? Moi ? Impossible !" tags="" position="726,1488" size="100,100">On ne vous en veut pas pour votre naïveté. L&#39;erreur est humaine, n&#39;est-ce pas ?
 Le but de cette série Biasflix est de vous instruire sur l&#39;effet Barnum et de vous prémunir contre ses usages. Vous pourrez même apprendre à l&#39;utiliser à vos dépens, avec modération bien sûr.
 Restez avec nous, confortablement sur votre siège.
 
