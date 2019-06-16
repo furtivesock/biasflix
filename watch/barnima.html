@@ -180,13 +180,14 @@ $(document).on('showpassage:after', function(){
 	}
 	// Aucun fond (fond noir par défaut)
 	if (!window.bgVideo) {
+		window.previousBgVideo = null;
 		return;
 	}
 	
 	// Si le fond est une vidéo de format .mp4 ou .webm
 	if (window.bgVideo.includes(".mp4") || window.bgVideo.includes(".webm")) {
 		if (window.bgVideo != window.previousBgVideo) {
-			document.body.innerHTML = '<video id="bgvid" playsinline autoplay muted autoloop><source src="../img/background/' + window.bgVideo + '" type="video/mp4"></video>' + document.body.innerHTML;
+			document.body.innerHTML = '<video id="bgvid" playsinline autoplay muted autoplay><source src="../img/background/' + window.bgVideo + '" type="video/mp4"></video>' + document.body.innerHTML;
 		window.previousBgVideo = window.bgVideo;
 		} 
 	} else {
@@ -308,13 +309,14 @@ Faites-moi confiance !
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Je vous fais confiance|C&#39;est parti]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Trap" tags="" position="726,1336" size="100,100">&lt;p id=&quot;first&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Trap" tags="" position="724,1336" size="100,100">&lt;% window.bgVideo = null; %&gt;
+&lt;p id=&quot;first&quot;&gt;
 Cette interprétation vous satisfait ? Sachez que vous êtes tombé dans le panneau !
 Tel était le but de notre expérience depuis le début.
 Les réponses que vous avez donné n&#39;auront aucune influence sur le déroulement de cette série. Cette interprétation est la même pour tous les spectateurs. 
 Ils servaient juste à introduire...&lt;/p&gt;
 &lt;div id=&quot;second&quot;&gt;
-&lt;p&gt;l&#39;effet BARNUM !&lt;/p&gt;
+&lt;p&gt;L&#39;effet BARNUM !&lt;/p&gt;
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Comment ? Me faire avoir ? Moi ? Impossible !]]
@@ -322,7 +324,6 @@ Ils servaient juste à introduire...&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;script&gt;
-window.bgVideo = null;
 $(&quot;#second&quot;).children().hide();
 setTimeout(
   function() 
@@ -336,8 +337,9 @@ setTimeout(
 		document.body.removeChild(video);
    		$(&quot;#second&quot;).children().fadeIn();
 	});
-  }, 12000);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Not a trap" tags="" position="935,1430" size="100,100">&lt;p id=&quot;first&quot;&gt;
+  }, 9000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Not a trap" tags="" position="937,1501" size="100,100">&lt;% window.bgVideo = null; %&gt;
+&lt;p id=&quot;first&quot;&gt;
 Toutes nos félicitations !
 Si vous êtes là, il y a des chances que cette interprétation ne vous corresponde pas totalement ou que vous ayez vu notre petit jeu...
 En effet, ce test de personnalité est bidon !
@@ -352,13 +354,11 @@ Mais ne partez pas si vite, il y a beaucoup de choses à dire sur ce biais cogni
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;script&gt;
-window.bgVideo = null;
 $(&quot;#second&quot;).children().hide();
 setTimeout(
   function() 
   {
-	window.bgVideo = &quot;opening.mp4&quot;;
-	document.body.innerHTML = &#39;&lt;video id=&quot;bgvid&quot; playsinline autoplay&gt;&lt;source src=&quot;../img/background/&#39; + window.bgVideo + &#39;&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;&#39; + document.body.innerHTML;
+	document.body.innerHTML = &#39;&lt;video id=&quot;bgvid&quot; playsinline autoplay&gt;&lt;source src=&quot;../img/background/opening.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;&#39; + document.body.innerHTML;
 	var video = document.body.querySelector(&#39;video&#39;);
 	video.volume = 0.1;
 	$(&quot;#first&quot;).delay(1000).fadeOut();
@@ -366,22 +366,24 @@ setTimeout(
 		document.body.removeChild(video);
    		$(&quot;#second&quot;).children().fadeIn();
 	});
-  }, 12000);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="14" name="Comment ? Me faire avoir ? Moi ? Impossible !" tags="" position="726,1488" size="100,100">On ne vous en veut pas pour votre naïveté. L&#39;erreur est humaine, n&#39;est-ce pas ?
+  }, 10000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="14" name="Comment ? Me faire avoir ? Moi ? Impossible !" tags="" position="726,1488" size="100,100">&lt;% window.bgVideo = &quot;bokeh1.mp4&quot;; %&gt;
+On ne vous en veut pas pour votre naïveté. L&#39;erreur est humaine, n&#39;est-ce pas ?
 Le but de cette série Biasflix est de vous instruire sur l&#39;effet Barnum et de vous prémunir contre ses usages. Vous pourrez même apprendre à l&#39;utiliser à vos dépens, avec modération bien sûr.
 Restez avec nous, confortablement sur votre siège.
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Continuer|Introduction]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="15" name="Introduction" tags="" position="728,1637" size="100,100">Comme vous avez pu l&#39;avoir remarqué, l&#39;effet Barnum est ce qu&#39;on appelle un biais cognitif. Il induit une personne à voir une description vague et générale d&#39;une personnalité comme étant sa propre personnalité.
+</tw-passagedata><tw-passagedata pid="15" name="Introduction" tags="" position="728,1637" size="100,100">&lt;% window.bgVideo = &quot;bokeh1.mp4&quot;; %&gt;
+Comme vous avez pu l&#39;avoir remarqué, l&#39;effet Barnum est ce qu&#39;on appelle un biais cognitif. Il induit une personne à voir une description vague et générale d&#39;une personnalité comme étant sa propre personnalité.
 
 Il est aussi appelé &lt;i&gt;effet Forer&lt;/i&gt;, &lt;i&gt;effet de validation subjective&lt;/i&gt; ou &lt;i&gt;effet de validation personnelle&lt;/i&gt;.
 
 
 &lt;div class=&quot;choice-selector&quot;&gt;
 [[Dites m&#39;en plus !|S1]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="S1" tags="" position="731,1773" size="100,100">Je suis sûr que vous avez déjà été victime de cet effet avant même d&#39;avoir visionné cette série !
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="S1" tags="" position="722,1814" size="100,100">Je suis sûr que vous avez déjà été victime de cet effet avant même d&#39;avoir visionné cette série !
 
 Voici quelques exemples (liste non exhaustive) de situations. Choisissez celui qui vous intéresse le plus !
 
