@@ -1,5 +1,6 @@
 # biasflix
 A Netflix of cognitive biases. There is only the TV Show *Barnumer Things* about Barnum Effect. Project for the module Communication in DUT Info.
+Made with Twine Snowman. Interface inspired by Netflix and its interactive mode.
 
 ## Notice (à lire !!)
 
